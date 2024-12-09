@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "E7hhtLHwEGE=",
+  "dgSpecHash": "3mVHC/jP1vP95R/92oxGK9FCVgpo7/mxwb0dNH88dejOFLih+NVpE0DYhyxVnzucmmbiT/TKntZtZM2STzqdqg==",
   "success": true,
-  "projectFilePath": "/home/nickgismokato/projects/website/Nickgismokato/Nickgismokato.Client/Nickgismokato.Client.csproj",
+  "projectFilePath": "/mnt/c/Users/nicka/Documents/Projects/CSharp/Website/NickgismokatoWebsite/Nickgismokato.Client/Nickgismokato.Client.csproj",
   "expectedPackageFiles": [
     "/home/nickgismokato/.nuget/packages/blazorise/1.6.2/blazorise.1.6.2.nupkg.sha512",
     "/home/nickgismokato/.nuget/packages/blazorise.bootstrap5/1.6.2/blazorise.bootstrap5.1.6.2.nupkg.sha512",
@@ -49,15 +49,15 @@
     "/home/nickgismokato/.nuget/packages/microsoft.extensions.primitives/8.0.0/microsoft.extensions.primitives.8.0.0.nupkg.sha512",
     "/home/nickgismokato/.nuget/packages/microsoft.jsinterop/8.0.11/microsoft.jsinterop.8.0.11.nupkg.sha512",
     "/home/nickgismokato/.nuget/packages/microsoft.jsinterop.webassembly/8.0.11/microsoft.jsinterop.webassembly.8.0.11.nupkg.sha512",
-    "/home/nickgismokato/.nuget/packages/microsoft.net.illink.tasks/8.0.11/microsoft.net.illink.tasks.8.0.11.nupkg.sha512",
-    "/home/nickgismokato/.nuget/packages/microsoft.net.sdk.webassembly.pack/8.0.11/microsoft.net.sdk.webassembly.pack.8.0.11.nupkg.sha512",
+    "/home/nickgismokato/.nuget/packages/microsoft.net.illink.tasks/8.0.10/microsoft.net.illink.tasks.8.0.10.nupkg.sha512",
+    "/home/nickgismokato/.nuget/packages/microsoft.net.sdk.webassembly.pack/8.0.10/microsoft.net.sdk.webassembly.pack.8.0.10.nupkg.sha512",
     "/home/nickgismokato/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
     "/home/nickgismokato/.nuget/packages/nlog/5.3.4/nlog.5.3.4.nupkg.sha512",
     "/home/nickgismokato/.nuget/packages/nlog.extensions.logging/5.3.15/nlog.extensions.logging.5.3.15.nupkg.sha512",
     "/home/nickgismokato/.nuget/packages/system.buffers/4.5.1/system.buffers.4.5.1.nupkg.sha512",
     "/home/nickgismokato/.nuget/packages/system.io.pipelines/8.0.0/system.io.pipelines.8.0.0.nupkg.sha512",
     "/home/nickgismokato/.nuget/packages/system.reactive/6.0.0/system.reactive.6.0.0.nupkg.sha512",
-    "/home/nickgismokato/.nuget/packages/microsoft.netcore.app.runtime.mono.browser-wasm/8.0.11/microsoft.netcore.app.runtime.mono.browser-wasm.8.0.11.nupkg.sha512"
+    "/home/nickgismokato/.nuget/packages/microsoft.netcore.app.runtime.mono.browser-wasm/8.0.10/microsoft.netcore.app.runtime.mono.browser-wasm.8.0.10.nupkg.sha512"
   ],
   "logs": [
     {
