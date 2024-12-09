@@ -1,5 +1,11 @@
 # Nickgismokato.com
 
+
+[![My Skills](https://skillicons.dev/icons?i=cs,html,css,bootstrap,dotnet&perline=3)](https://skillicons.dev)
+
+<!--
+https://github.com/tandpfun/skill-icons?tab=readme-ov-file
+-->
 ## Summary
 
 ## About
