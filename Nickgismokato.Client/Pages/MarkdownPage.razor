@@ -1,0 +1,37 @@
+@page "/markdown"
+
+<Heading Size="HeadingSize.Is1" Margin="Margin.Is3.FromBottom">Markdown Page</Heading>
+<Lead Margin="Margin.Is4.OnY">
+    This is my custom markdown page. Here we are using markdown to render evertthing under these "lead" lines.
+</Lead>
+
+<div>@((MarkupString)markdownBody)</div>
+
+
+<Markdown Value="@markdownValue" ValueChanged="@OnMarkdownValueChanged" />
+
+@code{
+    // Body
+    string markdownBody = Markdig.Markdown.ToHtml("# Markdown \n ## About \n This is a test for the `Markdown` to `HTML` function using [`Markdig`](https://github.com/xoofx/markdig) and [`Blazorise.Markdown`](https://blazorise.com/docs/extensions/markdown).\n"+
+    "> - This page will contain pure markdown code.\n" +
+    "> - This page will contain a markdown editor.");
+    string markdownValue = "# EasyMDE \n Go ahead, play around with the editor! Be sure to check out **bold**, *italic*, [links](https://google.com) and all the other features. You can type the Markdown syntax, use the toolbar, or use shortcuts like `ctrl-b` or `cmd-b`.";
+    string markdownHtml = "";
+
+    protected override void OnInitialized()
+    {
+        markdownHtml = Markdig.Markdown.ToHtml( markdownValue ?? string.Empty );
+
+        base.OnInitialized();
+    }
+
+    Task OnMarkdownValueChanged( string value )
+    {
+        markdownValue = value;
+
+        markdownHtml = Markdig.Markdown.ToHtml( markdownValue ?? string.Empty );
+
+        return Task.CompletedTask;
+    }
+}
+

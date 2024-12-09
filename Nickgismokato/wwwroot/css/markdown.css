@@ -1,0 +1,102 @@
+h1, h2, h3, h4, h5, h6 {
+	background: #FFFFFF;
+	border-top: 1px;
+	border-bottom: 3px solid black;
+	font-weight: normal;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+blockquote {
+	background: lightgray;
+	border-left: 3px solid grey;
+	font-style: italic;
+	padding-left: 5px;
+	margin-left: 2px;
+}
+pre {
+	background: #E0F0FF;
+	border-left: 5px solid #55AAFF;
+	padding: 5px;
+	margin-left: 2px;
+}
+code {
+	background-color: #eee;
+	border-radius: 3px;
+	font-family: courier, monospace;
+	padding: 0 3px;
+}
+table {
+	border-spacing: 0px;
+	border-right: 1px solid gray;
+	border-bottom: 1px solid gray;
+}
+th, td {
+	border-left: 1px solid gray;
+	border-top: 1px solid gray;
+}
+th {
+	background: #D4D4D4;
+	font-weight: 600;
+}
+ul {
+	margin-left-ltr: 20px;
+	margin-right-rtl: 20px;
+}
+ol {
+	margin-left-ltr: 25px;
+	margin-right-rtl: 25px;
+}
+
+
+.submit-button {
+    font-size: 18px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+h3 {
+    margin-top: 30px;
+}
+
+p {
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column; /* Stack label and textarea vertically */
+    margin-bottom: 20px; /* Space between sections */
+}
+
+.large-textarea {
+    width: 100%; /* Take up the full width of the container */
+    height: 300px; /* Adjust height as needed */
+    font-size: 16px;
+    padding: 10px;
+    box-sizing: border-box; /* Include padding and border in width/height calculations */
+    margin-top: 10px; /* Add space between the label and textarea */
+    resize: vertical; /* Allow vertical resizing, if needed */
+}
+
+.result-container {
+    min-height: 100px; /* Default minimum space when there's no query result */
+    padding-bottom: 20px; /* Add padding for extra whitespace */
+    transition: min-height 0.3s ease; /* Smooth transition for dynamic height changes */
+}
+
+.result-container p {
+    margin: 0;
+    font-size: 16px;
+    color: #6c757d; /* Bootstrap's muted text color */
+    white-space: pre-wrap; /* Preserve whitespace and line breaks in the result */
+}

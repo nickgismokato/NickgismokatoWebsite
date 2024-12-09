@@ -1,0 +1,53 @@
+<Heading Size="HeadingSize.Is1" Margin="Margin.Is3.FromBottom">ReunionLog Data App</Heading>
+<Lead Margin="Margin.Is4.OnY">
+	This webpage is a service created with the guild <code>New Reunion</code> to get specific data from <Anchor To="https://warcraftlogs.com" Target="Target.Blank">warcraftlogs</Anchor>.
+</Lead>
+
+<!--<Page Title="GraphQL Search">-->
+
+<h3>Upload Client Credentials</h3>
+<InputFile OnChange="HandleClientCredentialsUpload" />
+<p>Upload a .json file containing your client credentials.</p>
+
+<h3>GraphQL Query</h3>
+<div class="mb-4">
+    <label for="query" class="form-label">Enter GraphQL Query:</label>
+    <InputTextArea id="query" @bind-Value="GraphQLQuery" class="form-control" style="height: 300px;" />
+</div>
+
+<h3>GraphQL Variables</h3>
+<div class="mb-4">
+    <label for="variables" class="form-label">Enter GraphQL Variables (JSON format):</label>
+    <InputTextArea id="variables" @bind-Value="GraphQLVariables" class="form-control" style="height: 300px;" />
+</div>
+
+<button class="btn btn-primary" @onclick="SubmitGraphQLQuery">Submit Query</button>
+
+<h3>Result</h3>
+<div class="result-container">
+    <p>@QueryResult</p>
+</div>
+
+@code {
+	@using Nickgismokato.Client.Components.ReunionApp;
+    private string GraphQLQuery = string.Empty;
+    private string GraphQLVariables = string.Empty;
+    private string QueryResult = "No result has been recorded, yet";
+
+    private async Task HandleClientCredentialsUpload(InputFileChangeEventArgs e)
+    {
+        var file = e.File;
+        using (var stream = file.OpenReadStream())
+        {
+            var reuniongLog = new ReuniongLog();
+            reuniongLog.SaveClientCredentials(stream);
+        }
+    }
+
+    private async Task SubmitGraphQLQuery()
+    {
+        var reuniongLog = new ReuniongLog();
+        var endpoint = "https://www.warcraftlogs.com/api/v2/client"; // Replace with your actual endpoint
+        QueryResult = await reuniongLog.ExecuteGraphQLQuery(endpoint, GraphQLQuery, GraphQLVariables);
+    }
+}

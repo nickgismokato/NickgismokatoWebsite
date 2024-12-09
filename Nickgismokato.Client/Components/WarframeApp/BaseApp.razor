@@ -1,0 +1,69 @@
+<h1>Nickgismokato's Warframe App</h1>
+
+<p>@test</p>
+
+<p>@URLTest</p>
+
+
+
+<button @onclick="ManualUpdate">Update Warframe data</button>
+
+
+<!--@{ HTTPRequest.GetJSONFile(); }-->
+@code{
+	@using Nickgismokato.Client.Components.WarframeApp.Enums;
+	@using Nickgismokato.Client.Components.WarframeApp.Logging;
+
+	private bool _isRunning = true;
+	
+	string test = Enum2String.EnumToString(ItemEnum.Warframes);
+	string URLTest = HTTPRequest.URLParser(ItemEnum.Warframes);
+
+	
+
+    protected override async Task OnInitializedAsync(){
+        // Start the periodic task
+        _ = PeriodicUpdate();
+    }
+
+    private async Task PeriodicUpdate(){
+        while (_isRunning){
+            await Task.Delay(TimeSpan.FromHours(4)); // Wait 4 hours
+            await UpdateData();
+        }
+    }
+
+    private async Task UpdateData(){
+        try{
+			GlobalLogger.LogInfo("Updating Warframe data");
+            await HTTPRequest.GetJSONFile(true);
+        }catch (Exception ex){
+            Console.WriteLine($"Error during periodic update: {ex.Message}");
+			GlobalLogger.LogWarn("Exception happening in UpdateData in BaseApp.Razor");
+			GlobalLogger.LogException(ex);
+        }
+    }
+
+    private async Task ManualUpdate(){
+        GlobalLogger.LogInfo("Manual Update of Warframe data has been initialised");
+        System.IO.DirectoryInfo di = new DirectoryInfo("data/warframe/");
+        GlobalLogger.LogInfo("Deleting old .json Files in data/warframe/*");
+        foreach(FileInfo file in di.EnumerateFiles()){
+            try{
+                file.Delete();
+            }catch(Exception ex){
+                GlobalLogger.LogError("AN ERROR HAS OCCURRED IN ManualUpdate() IN WarframeApp");
+                GlobalLogger.LogError($"The file {file.Name} could not be deleted. This is the exception:");
+                GlobalLogger.LogException(ex);
+                throw ex;
+            }
+
+        }
+        GlobalLogger.LogInfo("Updating the new .json files for warframe after deletion");
+        await UpdateData();
+    }
+
+    public void Dispose(){
+        _isRunning = false;
+    }
+}
