@@ -1,0 +1,4 @@
+# Nickgismokato.com
+## About
+
+## Stuff
