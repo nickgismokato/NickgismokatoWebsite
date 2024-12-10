@@ -19,6 +19,8 @@ ___
 
 **A simple website to contain most of my web services and applications**
 
+---
+
 ### Backend
 <!--https://github.com/tandpfun/skill-icons?tab=readme-ov-file-->
 <p align="center">
@@ -27,11 +29,15 @@ ___
 	</a>
 </p>
 
-___
+
 
 <!--https://github.com/progfay/shields-with-icon-->
 ![.NET](https://img.shields.io/static/v1?style=for-the-badge&message=8.0&color=512BD4&logo=.NET&logoColor=FFFFFF&label=.NET)
 ![Linux](https://img.shields.io/static/v1?style=for-the-badge&message=Linux%20Development&color=222222&logo=Linux&logoColor=FCC624&label=)
+
+
+---
+---
 
 ### Dependencies
 <p align="center">
@@ -40,12 +46,10 @@ ___
 	</a>
 </p>
 
-___
-
 ![GraphQL](https://img.shields.io/static/v1?style=for-the-badge&message=GraphQL&color=E10098&logo=GraphQL&logoColor=FFFFFF&label=)
 ![Bootstrap](https://img.shields.io/static/v1?style=for-the-badge&message=V5&color=7952B3&logo=Bootstrap&logoColor=FFFFFF&label=Bootstrap)
 
-
+---
 
 ## About
 
