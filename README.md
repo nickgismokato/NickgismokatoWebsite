@@ -25,13 +25,13 @@ ___
 <!--https://github.com/tandpfun/skill-icons?tab=readme-ov-file-->
 <p align="center">
 	<a href="nickgismokato.com">
-		<img src="https://skillicons.dev/icons?i=cs,html,css,dotnet&perline=5"/>
+		<img src="https://skillicons.dev/icons?i=cs,html,css,cs,dotnet&perline=5"/>
 	</a>
 </p>
 
 
-
 <!--https://github.com/progfay/shields-with-icon-->
+![C#](https://img.shields.io/badge/12-239120?style=for-the-badge&logo=csharp&logoColor=white&label=C%23)
 ![.NET](https://img.shields.io/static/v1?style=for-the-badge&message=8.0&color=512BD4&logo=.NET&logoColor=FFFFFF&label=.NET)
 ![Linux](https://img.shields.io/static/v1?style=for-the-badge&message=Linux%20Development&color=222222&logo=Linux&logoColor=FCC624&label=)
 
@@ -69,7 +69,7 @@ Furthermore this website will contain some of my own webservices.
 
 The development is solo project, so this may or may not take some time to implement planned features and also maintain the website.
 
-**Planned**
+**Development Plan:**
 - [ ] ReunionLog
   - [ ] Handle `credentials.json` file
     - [ ] File restrictive
@@ -135,9 +135,17 @@ The development is solo project, so this may or may not take some time to implem
     - [ ] **Important** These will not be automated
 
 
-## Install and setup
+## Prerequisites 
 
-No installation is needed. Make sure to have `.NET8.0` installed.
+Make sure to have `.NET8.0 SDK` installed. Everything else will be handles by `.NET`. 
+
+### Windows and linux:
+
+Go to this [link](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) and download the `SDK 8.x.y` version for your OS.
+
+### GNU+Linux:
+Go to this [link](https://learn.microsoft.com/da-dk/dotnet/core/install/linux?WT.mc_id=dotnet-35129-website) and follow the instructions. The official distributions that supports `.NET` can be found here: https://packages.microsoft.com/
+
 ## Usage
 
 ### Sever Running
