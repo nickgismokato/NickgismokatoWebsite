@@ -1,6 +1,12 @@
 # Nickgismokato.com
-
-<p align="center"><img src="https://git-profile-readme-banner.vercel.app/api/python?username=Nickgismokato&txt=Full%20stack%20Developer%20"></p>
+<p aling="center">
+	<a href="#">
+	<img src="https://img.shields.io/badge/version-0.2.0-blue/">
+	</a>
+	<a href="#">
+	<img src="https://img.shields.io/badge/Last_Updated-10/12/24-red"/>
+	</a>
+</p>
 
 <!--https://github.com/tandpfun/skill-icons?tab=readme-ov-file-->
 <p align="center">
@@ -29,5 +35,8 @@ Furthermore this website will contain some of my own webservices.
 
 - :zap: Test
 
-## stuff
+## Install and setup
 
+## Usage
+
+## License
