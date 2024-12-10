@@ -68,8 +68,34 @@ Furthermore this website will contain some of my own webservices.
 
 - :zap: Test
 
+## Development Status and Progress
+
+The development is solo project, so this may or may not take some time to implement planned features and also maintain the website.
+
+**Planned**
+- [ ] ReunionLog
+- [ ] WarframeApp
+- [ ] SaTyR Documentation
+  - [ ] Handle pdf preview
+  - [ ] Handle Data to store
+
+
 ## Install and setup
 
 ## Usage
+
+### Sever Running
+
+**Summary:** To run this website on a server first clone this repository and then run the project inside `Nickgismokato` and **not** the `Nickgismokato.Client`.
+
+**Steps:**
+
+1. Navigate to a directory where you, the user, have permission.
+2. Clone the repository `git clone https://github.com/nickgismokato/NickgismokatoWebsite.git`
+3. Navigate to `Nickgismokato/`
+4. Use the .NET run command: `dotnet run`
+
+**Optional steps**
+- (*Optional*) Make sure `/var/log/website/` has writing permissions since this is where our log files will be stored by our program
 
 ## License
