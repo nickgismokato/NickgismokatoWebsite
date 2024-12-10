@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hQ66JthCHYpdioF53WkVQ8HIPvOONM7ivi5ozpVz1VXZ3Cy4CthZd9XFOp6Ma0qq3cbg2HAi11f7+EbgUkVXOw==",
+  "dgSpecHash": "47m3be6v+tg=",
   "success": true,
-  "projectFilePath": "/mnt/c/Users/nicka/Documents/Projects/CSharp/Website/NickgismokatoWebsite/Nickgismokato/Nickgismokato.csproj",
+  "projectFilePath": "/home/nickgismokato/projects/website/Nickgismokato/Nickgismokato/Nickgismokato.csproj",
   "expectedPackageFiles": [
     "/home/nickgismokato/.nuget/packages/blazorise/1.6.2/blazorise.1.6.2.nupkg.sha512",
     "/home/nickgismokato/.nuget/packages/blazorise.bootstrap5/1.6.2/blazorise.bootstrap5.1.6.2.nupkg.sha512",

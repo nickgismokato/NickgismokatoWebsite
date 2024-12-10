@@ -779,13 +779,13 @@
           }
         }
       },
-      "Microsoft.NET.ILLink.Tasks/8.0.10": {
+      "Microsoft.NET.ILLink.Tasks/8.0.11": {
         "type": "package",
         "build": {
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
-      "Microsoft.NET.Sdk.WebAssembly.Pack/8.0.10": {
+      "Microsoft.NET.Sdk.WebAssembly.Pack/8.0.11": {
         "type": "package",
         "build": {
           "build/Microsoft.NET.Sdk.WebAssembly.Pack.props": {},
@@ -1656,13 +1656,13 @@
           }
         }
       },
-      "Microsoft.NET.ILLink.Tasks/8.0.10": {
+      "Microsoft.NET.ILLink.Tasks/8.0.11": {
         "type": "package",
         "build": {
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
-      "Microsoft.NET.Sdk.WebAssembly.Pack/8.0.10": {
+      "Microsoft.NET.Sdk.WebAssembly.Pack/8.0.11": {
         "type": "package",
         "build": {
           "build/Microsoft.NET.Sdk.WebAssembly.Pack.props": {},
@@ -2901,10 +2901,10 @@
         "microsoft.jsinterop.webassembly.nuspec"
       ]
     },
-    "Microsoft.NET.ILLink.Tasks/8.0.10": {
-      "sha512": "xT8jYjlroY7SLbGtoV9vUTVW/TPgodL4Egc31a444Xe0TMytLZ3UlKQ0kxMZsy/CrWsFB6wtKnSG1SsXcWreew==",
+    "Microsoft.NET.ILLink.Tasks/8.0.11": {
+      "sha512": "zk5lnZrYJgtuJG8L4v17Ej8rZ3PUcR2iweNV08BaO5LbYHIi2wNaVNcJoLxvqgQdnjLlKnCCfVGLDr6QHeAarQ==",
       "type": "package",
-      "path": "microsoft.net.illink.tasks/8.0.10",
+      "path": "microsoft.net.illink.tasks/8.0.11",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -2918,7 +2918,7 @@
         "build/Microsoft.NET.ILLink.Analyzers.props",
         "build/Microsoft.NET.ILLink.Tasks.props",
         "build/Microsoft.NET.ILLink.targets",
-        "microsoft.net.illink.tasks.8.0.10.nupkg.sha512",
+        "microsoft.net.illink.tasks.8.0.11.nupkg.sha512",
         "microsoft.net.illink.tasks.nuspec",
         "tools/net472/ILLink.Tasks.dll",
         "tools/net472/ILLink.Tasks.dll.config",
@@ -2952,10 +2952,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.NET.Sdk.WebAssembly.Pack/8.0.10": {
-      "sha512": "DTJaIRCxCphhaI+7htflFVgOHbQMLprP65yRk5jlnXfkjwyo8oNwFPBZDr6/3X0YO7W77JOjnfjve2QSaYxs9g==",
+    "Microsoft.NET.Sdk.WebAssembly.Pack/8.0.11": {
+      "sha512": "apyq1nlpnHG64NVs1RpgUJAxM73bu5fLFB/SsIcYYiLKdUxiIMPQQWr9ysRxfJRLlKwLSoJo6LmjhjS9sxC8eg==",
       "type": "package",
-      "path": "microsoft.net.sdk.webassembly.pack/8.0.10",
+      "path": "microsoft.net.sdk.webassembly.pack/8.0.11",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -2983,7 +2983,7 @@
         "build/Microsoft.NET.Sdk.WebAssembly.Pack.props",
         "build/Microsoft.NET.Sdk.WebAssembly.Pack.targets",
         "build/Wasm.web.config",
-        "microsoft.net.sdk.webassembly.pack.8.0.10.nupkg.sha512",
+        "microsoft.net.sdk.webassembly.pack.8.0.11.nupkg.sha512",
         "microsoft.net.sdk.webassembly.pack.nuspec",
         "tools/net472/Microsoft.Bcl.AsyncInterfaces.dll",
         "tools/net472/Microsoft.Build.dll",
@@ -3210,8 +3210,8 @@
       "GraphQL.SystemTextJson >= 8.2.1",
       "Markdig >= 0.38.0",
       "Microsoft.AspNetCore.Components.WebAssembly >= 8.0.*",
-      "Microsoft.NET.ILLink.Tasks >= 8.0.10",
-      "Microsoft.NET.Sdk.WebAssembly.Pack >= 8.0.10",
+      "Microsoft.NET.ILLink.Tasks >= 8.0.11",
+      "Microsoft.NET.Sdk.WebAssembly.Pack >= 8.0.11",
       "NLog >= 5.3.4",
       "NLog.Extensions.Logging >= 5.3.15"
     ]
@@ -3222,11 +3222,11 @@
   "project": {
     "version": "1.6.0",
     "restore": {
-      "projectUniqueName": "/mnt/c/Users/nicka/Documents/Projects/CSharp/Website/NickgismokatoWebsite/Nickgismokato.Client/Nickgismokato.Client.csproj",
+      "projectUniqueName": "/home/nickgismokato/projects/website/Nickgismokato/Nickgismokato.Client/Nickgismokato.Client.csproj",
       "projectName": "Nickgismokato.Client",
-      "projectPath": "/mnt/c/Users/nicka/Documents/Projects/CSharp/Website/NickgismokatoWebsite/Nickgismokato.Client/Nickgismokato.Client.csproj",
+      "projectPath": "/home/nickgismokato/projects/website/Nickgismokato/Nickgismokato.Client/Nickgismokato.Client.csproj",
       "packagesPath": "/home/nickgismokato/.nuget/packages/",
-      "outputPath": "/mnt/c/Users/nicka/Documents/Projects/CSharp/Website/NickgismokatoWebsite/Nickgismokato.Client/obj/",
+      "outputPath": "/home/nickgismokato/projects/website/Nickgismokato/Nickgismokato.Client/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/nickgismokato/.nuget/NuGet/NuGet.Config"
@@ -3247,6 +3247,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -3320,13 +3325,13 @@
           "Microsoft.NET.ILLink.Tasks": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "[8.0.10, )",
+            "version": "[8.0.11, )",
             "autoReferenced": true
           },
           "Microsoft.NET.Sdk.WebAssembly.Pack": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "[8.0.10, )",
+            "version": "[8.0.11, )",
             "autoReferenced": true
           },
           "NLog": {
@@ -3352,7 +3357,7 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
-            "version": "[8.0.10, 8.0.10]"
+            "version": "[8.0.11, 8.0.11]"
           }
         ],
         "frameworkReferences": {
@@ -3360,7 +3365,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.110/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.404/PortableRuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {

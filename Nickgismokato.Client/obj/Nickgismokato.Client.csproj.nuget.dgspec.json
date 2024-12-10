@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/mnt/c/Users/nicka/Documents/Projects/CSharp/Website/NickgismokatoWebsite/Nickgismokato.Client/Nickgismokato.Client.csproj": {}
+    "/home/nickgismokato/projects/website/Nickgismokato/Nickgismokato.Client/Nickgismokato.Client.csproj": {}
   },
   "projects": {
-    "/mnt/c/Users/nicka/Documents/Projects/CSharp/Website/NickgismokatoWebsite/Nickgismokato.Client/Nickgismokato.Client.csproj": {
+    "/home/nickgismokato/projects/website/Nickgismokato/Nickgismokato.Client/Nickgismokato.Client.csproj": {
       "version": "1.6.0",
       "restore": {
-        "projectUniqueName": "/mnt/c/Users/nicka/Documents/Projects/CSharp/Website/NickgismokatoWebsite/Nickgismokato.Client/Nickgismokato.Client.csproj",
+        "projectUniqueName": "/home/nickgismokato/projects/website/Nickgismokato/Nickgismokato.Client/Nickgismokato.Client.csproj",
         "projectName": "Nickgismokato.Client",
-        "projectPath": "/mnt/c/Users/nicka/Documents/Projects/CSharp/Website/NickgismokatoWebsite/Nickgismokato.Client/Nickgismokato.Client.csproj",
+        "projectPath": "/home/nickgismokato/projects/website/Nickgismokato/Nickgismokato.Client/Nickgismokato.Client.csproj",
         "packagesPath": "/home/nickgismokato/.nuget/packages/",
-        "outputPath": "/mnt/c/Users/nicka/Documents/Projects/CSharp/Website/NickgismokatoWebsite/Nickgismokato.Client/obj/",
+        "outputPath": "/home/nickgismokato/projects/website/Nickgismokato/Nickgismokato.Client/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/nickgismokato/.nuget/NuGet/NuGet.Config"
@@ -32,6 +32,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -105,13 +110,13 @@
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.10, )",
+              "version": "[8.0.11, )",
               "autoReferenced": true
             },
             "Microsoft.NET.Sdk.WebAssembly.Pack": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.10, )",
+              "version": "[8.0.11, )",
               "autoReferenced": true
             },
             "NLog": {
@@ -137,7 +142,7 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
-              "version": "[8.0.10, 8.0.10]"
+              "version": "[8.0.11, 8.0.11]"
             }
           ],
           "frameworkReferences": {
@@ -145,7 +150,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.110/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.404/PortableRuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
