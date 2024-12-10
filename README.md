@@ -99,3 +99,10 @@ The development is solo project, so this may or may not take some time to implem
 - (*Optional*) Make sure `/var/log/website/` has writing permissions since this is where our log files will be stored by our program
 
 ## License
+<p align="center">
+	<a href="./LICENSE">
+		<img src="https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge"/>
+	</a>
+</p>
+
+We are using [MIT](./LICENSE) License. It is up to other developers to read and understand this license.
