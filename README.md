@@ -1,4 +1,6 @@
 # Nickgismokato.com
+## Summary
+### This Project
 <p align="center">
 	<a href="./VERSION">
 		<img src="https://img.shields.io/badge/Version-0.2.0-informational"/>
@@ -13,15 +15,37 @@
 	</a>
 </p>
 
+___
+
+**A simple website to contain most of my web services and applications**
+
+### Backend
 <!--https://github.com/tandpfun/skill-icons?tab=readme-ov-file-->
 <p align="center">
 	<a href="nickgismokato.com">
-		<img src="https://skillicons.dev/icons?i=cs,html,css,bootstrap,dotnet&perline=5"/>
+		<img src="https://skillicons.dev/icons?i=cs,html,css,dotnet&perline=5"/>
 	</a>
 </p>
 
+___
 
-## Summary
+<!--https://github.com/progfay/shields-with-icon-->
+![.NET](https://img.shields.io/static/v1?style=for-the-badge&message=8.0&color=512BD4&logo=.NET&logoColor=FFFFFF&label=.NET)
+![Linux](https://img.shields.io/static/v1?style=for-the-badge&message=Linux%20Development&color=222222&logo=Linux&logoColor=FCC624&label=)
+
+### Dependencies
+<p align="center">
+	<a href="nickgismokato.com">
+		<img src="https://skillicons.dev/icons?i=graphql,bootstrap&perline=5"/>
+	</a>
+</p>
+
+___
+
+![GraphQL](https://img.shields.io/static/v1?style=for-the-badge&message=GraphQL&color=E10098&logo=GraphQL&logoColor=FFFFFF&label=)
+![Bootstrap](https://img.shields.io/static/v1?style=for-the-badge&message=V5&color=7952B3&logo=Bootstrap&logoColor=FFFFFF&label=Bootstrap)
+
+
 
 ## About
 
