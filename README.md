@@ -1,10 +1,15 @@
 # Nickgismokato.com
 <p aling="center">
 	<a href="#">
-	<img src="https://img.shields.io/badge/version-0.2.0-blue/">
+		<img src="https://img.shields.io/badge/version-0.2.0-blue/">
 	</a>
 	<a href="#">
-	<img src="https://img.shields.io/badge/Last_Updated-10/12/24-red"/>
+		<img src="https://img.shields.io/badge/Last_Updated-10/12/24-red"/>
+	</a>
+</p>
+<p>
+	<a href="./LICENSE">
+		<img src="https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge"/>
 	</a>
 </p>
 
