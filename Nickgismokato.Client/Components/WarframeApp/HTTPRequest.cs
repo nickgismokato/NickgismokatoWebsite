@@ -5,11 +5,10 @@ using Nickgismokato.Client.Components.WarframeApp.Data;
 namespace Nickgismokato.Client.Components.WarframeApp;
 
 public static class HTTPRequest{
-
+	public static string baseURL = "https://api.warframestat.us/";
 
 	public static string URLParser<T>(T myEnum){
 		GlobalLogger.LogInfo($"Parsing enum {typeof(T).Name}");
-		string baseURL = "https://api.warframestat.us/";
 		if(Enum2String.EnumToString(myEnum) == "NULL"){
 			return "ERROR - NULL";
 		}
@@ -17,7 +16,6 @@ public static class HTTPRequest{
 	}
 	public static string URLParserString(string myEnum){
 		GlobalLogger.LogInfo($"Parsing enum string {myEnum}");
-		string baseURL = "https://api.warframestat.us/";
 		return baseURL + myEnum;
 	}
 	

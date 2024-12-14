@@ -4,22 +4,23 @@
     <RestoreSuccess Condition=" '$(RestoreSuccess)' == '' ">True</RestoreSuccess>
     <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
     <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
-    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">/home/nickgismokato/.nuget/packages/</NuGetPackageRoot>
-    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">/home/nickgismokato/.nuget/packages/</NuGetPackageFolders>
+    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\nicka\.nuget\packages\;C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages</NuGetPackageFolders>
     <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
     <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.11.1</NuGetToolVersion>
   </PropertyGroup>
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <SourceRoot Include="/home/nickgismokato/.nuget/packages/" />
+    <SourceRoot Include="C:\Users\nicka\.nuget\packages\" />
+    <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
   </ItemGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)blazorise/1.6.2/buildTransitive/Blazorise.props" Condition="Exists('$(NuGetPackageRoot)blazorise/1.6.2/buildTransitive/Blazorise.props')" />
-    <Import Project="$(NuGetPackageRoot)blazorise.markdown/1.6.0/buildTransitive/Blazorise.Markdown.props" Condition="Exists('$(NuGetPackageRoot)blazorise.markdown/1.6.0/buildTransitive/Blazorise.Markdown.props')" />
-    <Import Project="$(NuGetPackageRoot)blazorise.icons.fontawesome/1.6.2/buildTransitive/Blazorise.Icons.FontAwesome.props" Condition="Exists('$(NuGetPackageRoot)blazorise.icons.fontawesome/1.6.2/buildTransitive/Blazorise.Icons.FontAwesome.props')" />
-    <Import Project="$(NuGetPackageRoot)blazorise.bootstrap5/1.6.2/buildTransitive/Blazorise.Bootstrap5.props" Condition="Exists('$(NuGetPackageRoot)blazorise.bootstrap5/1.6.2/buildTransitive/Blazorise.Bootstrap5.props')" />
+    <Import Project="$(NuGetPackageRoot)blazorise\1.6.2\buildTransitive\Blazorise.props" Condition="Exists('$(NuGetPackageRoot)blazorise\1.6.2\buildTransitive\Blazorise.props')" />
+    <Import Project="$(NuGetPackageRoot)blazorise.markdown\1.6.0\buildTransitive\Blazorise.Markdown.props" Condition="Exists('$(NuGetPackageRoot)blazorise.markdown\1.6.0\buildTransitive\Blazorise.Markdown.props')" />
+    <Import Project="$(NuGetPackageRoot)blazorise.icons.fontawesome\1.6.2\buildTransitive\Blazorise.Icons.FontAwesome.props" Condition="Exists('$(NuGetPackageRoot)blazorise.icons.fontawesome\1.6.2\buildTransitive\Blazorise.Icons.FontAwesome.props')" />
+    <Import Project="$(NuGetPackageRoot)blazorise.bootstrap5\1.6.2\buildTransitive\Blazorise.Bootstrap5.props" Condition="Exists('$(NuGetPackageRoot)blazorise.bootstrap5\1.6.2\buildTransitive\Blazorise.Bootstrap5.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <PkgGraphQL_Analyzers Condition=" '$(PkgGraphQL_Analyzers)' == '' ">/home/nickgismokato/.nuget/packages/graphql.analyzers/8.2.1</PkgGraphQL_Analyzers>
-    <PkgMicrosoft_AspNetCore_Components_WebAssembly_Server Condition=" '$(PkgMicrosoft_AspNetCore_Components_WebAssembly_Server)' == '' ">/home/nickgismokato/.nuget/packages/microsoft.aspnetcore.components.webassembly.server/8.0.11</PkgMicrosoft_AspNetCore_Components_WebAssembly_Server>
+    <PkgGraphQL_Analyzers Condition=" '$(PkgGraphQL_Analyzers)' == '' ">C:\Users\nicka\.nuget\packages\graphql.analyzers\8.2.1</PkgGraphQL_Analyzers>
+    <PkgMicrosoft_AspNetCore_Components_WebAssembly_Server Condition=" '$(PkgMicrosoft_AspNetCore_Components_WebAssembly_Server)' == '' ">C:\Users\nicka\.nuget\packages\microsoft.aspnetcore.components.webassembly.server\8.0.11</PkgMicrosoft_AspNetCore_Components_WebAssembly_Server>
   </PropertyGroup>
 </Project>
