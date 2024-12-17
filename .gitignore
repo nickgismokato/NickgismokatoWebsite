@@ -185,3 +185,9 @@ $RECYCLE.BIN/
 
 _NCrunch*
 
+Nickgismokato/bin/
+Nickgismokato/obj/
+Nickgismokato/data/client_credentials.json
+
+Nickgismokato.Client/bin/
+Nickgismokato.Client/obj/
