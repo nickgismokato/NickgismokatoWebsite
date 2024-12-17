@@ -19,6 +19,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="Blazored.SessionStorage" Version="2.4.0" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.*" />
 		<PackageReference Include="NLog" Version="5.3.4" />
 	</ItemGroup>
