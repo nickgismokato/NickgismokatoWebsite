@@ -70,6 +70,13 @@ Furthermore this website will contain some of my own webservices.
 The development is solo project, so this may or may not take some time to implement planned features and also maintain the website.
 
 **Development Plan:**
+- [ ] Website
+  - [ ] Implement User Sessions
+    - [ ] Use https://github.com/Blazored/SessionStorage
+  - [ ] Implement Web Paginator
+    - [ ] Either use custom extension or build the `.css` itself
+    - [ ] Implement this is `ReunionLog` and `WarframeApp`
+  - [ ] Implement `RichText` for global show 
 - [ ] ReunionLog
   - [ ] Handle `credentials.json` file
     - [ ] File restrictive
