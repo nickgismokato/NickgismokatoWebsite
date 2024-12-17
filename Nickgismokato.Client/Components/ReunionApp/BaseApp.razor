@@ -77,22 +77,18 @@
             }
 
             var jsonContent = await File.ReadAllTextAsync(credentialsFilePath);
-            System.Console.WriteLine($"Content of jsonContent{jsonContent}");
             var credentials = Newtonsoft.Json.JsonConvert.DeserializeObject<ClientCredentials>(jsonContent);
-            System.Console.WriteLine($"ID: {credentials.ClientId}\t Secret: {credentials.ClientSecret}");
             if (credentials == null || string.IsNullOrEmpty(credentials.ClientId) || string.IsNullOrEmpty(credentials.ClientSecret)){
                 Console.WriteLine("Error: Invalid credentials in client_credentials.json.");
                 return;
             }
 
-            string token = await reunionLog.GetAccessTokenAsync(tokenURL, credentials.ClientId, credentials.ClientSecret);
+            string token = await reunionLog.GetAccessToken(tokenURL, credentials.ClientId, credentials.ClientSecret);
 
             if (string.IsNullOrEmpty(token)){
                 Console.WriteLine("Error: Failed to retrieve access token.");
                 return;
             }
-
-            Console.WriteLine($"Access Token: {token}");
 
             // Execute the GraphQL query
             string graphqlEndpoint = "https://www.warcraftlogs.com/api/v2/client";

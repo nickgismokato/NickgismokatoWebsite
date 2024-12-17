@@ -9,27 +9,12 @@ namespace Nickgismokato.Client.Components.ReunionApp{
     public class ReunionLog{
         private string _credentialsFilePath = "data/client_credentials.json";
 
-        public async Task<string> GetAccessTokenAsync(string authUrl, string clientId, string clientSecret){
+        public async Task<string> GetAccessToken(string authUrl, string clientId, string clientSecret){
             try{
-                var client = new HttpClient();
-                var data = new Dictionary<string, string>{
-                    { "grant_type", "client_credentials" },
-                    { "client_id", clientId },
-                    { "client_secret", clientSecret }
-                };
-
-                var content = new FormUrlEncodedContent(data);
-                var response = await client.PostAsync(authUrl, content);
-
-                // Debugging logs
-                System.Console.WriteLine("Response Status Code: " + response.StatusCode);
-                System.Console.WriteLine("Response Content: " + await response.Content.ReadAsStringAsync());
-
-                response.EnsureSuccessStatusCode();
-
-                var jsonResponse = await response.Content.ReadAsStringAsync();
-                dynamic parsedResponse = Newtonsoft.Json.JsonConvert.DeserializeObject(jsonResponse);
-                return parsedResponse.access_token;
+                if(Token.Expired()){
+                    await Token.GetAccessTokenAsync(authUrl, clientId, clientSecret);
+                }
+                return Token.accessToken;
             }catch(Exception ex){
                 System.Console.WriteLine($"Error in GetAccessTokenAsync: {ex.Message}");
                 return "";
