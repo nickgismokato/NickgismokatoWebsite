@@ -3,6 +3,8 @@ using GraphQL;
 using GraphQL.Client.Http;
 using GraphQL.Client.Serializer.Newtonsoft;
 
+using Nickgismokato.Client.Components.ReunionApp.http;
+
 namespace Nickgismokato.Client.Components.ReunionApp{
     public class ReunionLog{
         private string _credentialsFilePath = "data/client_credentials.json";
