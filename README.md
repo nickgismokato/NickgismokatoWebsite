@@ -17,7 +17,7 @@
 
 ___
 
-**A simple website to contain most of my web services and applications**
+**A simple website to contain most of my web services and applications.**
 
 ---
 
