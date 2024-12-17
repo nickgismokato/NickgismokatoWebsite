@@ -1,32 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nicka\\Documents\\Projects\\CSharp\\Website\\NickgismokatoWebsite\\Nickgismokato.Client\\Nickgismokato.Client.csproj": {}
+    "/home/nickgismokato/projects/website/Nickgismokato/Nickgismokato.Client/Nickgismokato.Client.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nicka\\Documents\\Projects\\CSharp\\Website\\NickgismokatoWebsite\\Nickgismokato.Client\\Nickgismokato.Client.csproj": {
+    "/home/nickgismokato/projects/website/Nickgismokato/Nickgismokato.Client/Nickgismokato.Client.csproj": {
       "version": "1.6.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nicka\\Documents\\Projects\\CSharp\\Website\\NickgismokatoWebsite\\Nickgismokato.Client\\Nickgismokato.Client.csproj",
+        "projectUniqueName": "/home/nickgismokato/projects/website/Nickgismokato/Nickgismokato.Client/Nickgismokato.Client.csproj",
         "projectName": "Nickgismokato.Client",
-        "projectPath": "C:\\Users\\nicka\\Documents\\Projects\\CSharp\\Website\\NickgismokatoWebsite\\Nickgismokato.Client\\Nickgismokato.Client.csproj",
-        "packagesPath": "C:\\Users\\nicka\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nicka\\Documents\\Projects\\CSharp\\Website\\NickgismokatoWebsite\\Nickgismokato.Client\\obj\\",
+        "projectPath": "/home/nickgismokato/projects/website/Nickgismokato/Nickgismokato.Client/Nickgismokato.Client.csproj",
+        "packagesPath": "/home/nickgismokato/.nuget/packages/",
+        "outputPath": "/home/nickgismokato/projects/website/Nickgismokato/Nickgismokato.Client/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\nicka\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/nickgismokato/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "c:\\program files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -157,7 +150,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.404/PortableRuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {

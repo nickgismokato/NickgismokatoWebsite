@@ -4,27 +4,26 @@
     <RestoreSuccess Condition=" '$(RestoreSuccess)' == '' ">True</RestoreSuccess>
     <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
     <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
-    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>
-    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\nicka\.nuget\packages\;C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages</NuGetPackageFolders>
+    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">/home/nickgismokato/.nuget/packages/</NuGetPackageRoot>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">/home/nickgismokato/.nuget/packages/</NuGetPackageFolders>
     <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
     <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.11.1</NuGetToolVersion>
   </PropertyGroup>
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <SourceRoot Include="C:\Users\nicka\.nuget\packages\" />
-    <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
+    <SourceRoot Include="/home/nickgismokato/.nuget/packages/" />
   </ItemGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)microsoft.net.sdk.webassembly.pack\8.0.11\build\Microsoft.NET.Sdk.WebAssembly.Pack.props" Condition="Exists('$(NuGetPackageRoot)microsoft.net.sdk.webassembly.pack\8.0.11\build\Microsoft.NET.Sdk.WebAssembly.Pack.props')" />
-    <Import Project="$(NuGetPackageRoot)microsoft.net.illink.tasks\8.0.11\build\Microsoft.NET.ILLink.Tasks.props" Condition="Exists('$(NuGetPackageRoot)microsoft.net.illink.tasks\8.0.11\build\Microsoft.NET.ILLink.Tasks.props')" />
-    <Import Project="$(NuGetPackageRoot)microsoft.aspnetcore.components.webassembly\8.0.11\build\net8.0\Microsoft.AspNetCore.Components.WebAssembly.props" Condition="Exists('$(NuGetPackageRoot)microsoft.aspnetcore.components.webassembly\8.0.11\build\net8.0\Microsoft.AspNetCore.Components.WebAssembly.props')" />
-    <Import Project="$(NuGetPackageRoot)blazorise\1.6.2\buildTransitive\Blazorise.props" Condition="Exists('$(NuGetPackageRoot)blazorise\1.6.2\buildTransitive\Blazorise.props')" />
-    <Import Project="$(NuGetPackageRoot)blazorise.markdown\1.6.0\buildTransitive\Blazorise.Markdown.props" Condition="Exists('$(NuGetPackageRoot)blazorise.markdown\1.6.0\buildTransitive\Blazorise.Markdown.props')" />
-    <Import Project="$(NuGetPackageRoot)blazorise.icons.fontawesome\1.6.2\buildTransitive\Blazorise.Icons.FontAwesome.props" Condition="Exists('$(NuGetPackageRoot)blazorise.icons.fontawesome\1.6.2\buildTransitive\Blazorise.Icons.FontAwesome.props')" />
-    <Import Project="$(NuGetPackageRoot)blazorise.bootstrap5\1.6.2\buildTransitive\Blazorise.Bootstrap5.props" Condition="Exists('$(NuGetPackageRoot)blazorise.bootstrap5\1.6.2\buildTransitive\Blazorise.Bootstrap5.props')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.net.sdk.webassembly.pack/8.0.11/build/Microsoft.NET.Sdk.WebAssembly.Pack.props" Condition="Exists('$(NuGetPackageRoot)microsoft.net.sdk.webassembly.pack/8.0.11/build/Microsoft.NET.Sdk.WebAssembly.Pack.props')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.net.illink.tasks/8.0.11/build/Microsoft.NET.ILLink.Tasks.props" Condition="Exists('$(NuGetPackageRoot)microsoft.net.illink.tasks/8.0.11/build/Microsoft.NET.ILLink.Tasks.props')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.aspnetcore.components.webassembly/8.0.11/build/net8.0/Microsoft.AspNetCore.Components.WebAssembly.props" Condition="Exists('$(NuGetPackageRoot)microsoft.aspnetcore.components.webassembly/8.0.11/build/net8.0/Microsoft.AspNetCore.Components.WebAssembly.props')" />
+    <Import Project="$(NuGetPackageRoot)blazorise/1.6.2/buildTransitive/Blazorise.props" Condition="Exists('$(NuGetPackageRoot)blazorise/1.6.2/buildTransitive/Blazorise.props')" />
+    <Import Project="$(NuGetPackageRoot)blazorise.markdown/1.6.0/buildTransitive/Blazorise.Markdown.props" Condition="Exists('$(NuGetPackageRoot)blazorise.markdown/1.6.0/buildTransitive/Blazorise.Markdown.props')" />
+    <Import Project="$(NuGetPackageRoot)blazorise.icons.fontawesome/1.6.2/buildTransitive/Blazorise.Icons.FontAwesome.props" Condition="Exists('$(NuGetPackageRoot)blazorise.icons.fontawesome/1.6.2/buildTransitive/Blazorise.Icons.FontAwesome.props')" />
+    <Import Project="$(NuGetPackageRoot)blazorise.bootstrap5/1.6.2/buildTransitive/Blazorise.Bootstrap5.props" Condition="Exists('$(NuGetPackageRoot)blazorise.bootstrap5/1.6.2/buildTransitive/Blazorise.Bootstrap5.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <PkgMicrosoft_NET_Sdk_WebAssembly_Pack Condition=" '$(PkgMicrosoft_NET_Sdk_WebAssembly_Pack)' == '' ">C:\Users\nicka\.nuget\packages\microsoft.net.sdk.webassembly.pack\8.0.11</PkgMicrosoft_NET_Sdk_WebAssembly_Pack>
-    <PkgMicrosoft_NET_ILLink_Tasks Condition=" '$(PkgMicrosoft_NET_ILLink_Tasks)' == '' ">C:\Users\nicka\.nuget\packages\microsoft.net.illink.tasks\8.0.11</PkgMicrosoft_NET_ILLink_Tasks>
-    <PkgGraphQL_Analyzers Condition=" '$(PkgGraphQL_Analyzers)' == '' ">C:\Users\nicka\.nuget\packages\graphql.analyzers\8.2.1</PkgGraphQL_Analyzers>
+    <PkgMicrosoft_NET_Sdk_WebAssembly_Pack Condition=" '$(PkgMicrosoft_NET_Sdk_WebAssembly_Pack)' == '' ">/home/nickgismokato/.nuget/packages/microsoft.net.sdk.webassembly.pack/8.0.11</PkgMicrosoft_NET_Sdk_WebAssembly_Pack>
+    <PkgMicrosoft_NET_ILLink_Tasks Condition=" '$(PkgMicrosoft_NET_ILLink_Tasks)' == '' ">/home/nickgismokato/.nuget/packages/microsoft.net.illink.tasks/8.0.11</PkgMicrosoft_NET_ILLink_Tasks>
+    <PkgGraphQL_Analyzers Condition=" '$(PkgGraphQL_Analyzers)' == '' ">/home/nickgismokato/.nuget/packages/graphql.analyzers/8.2.1</PkgGraphQL_Analyzers>
   </PropertyGroup>
 </Project>

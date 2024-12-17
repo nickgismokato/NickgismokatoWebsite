@@ -3,6 +3,9 @@
 	This webpage is a service created with the guild <code>New Reunion</code> to get specific data from <Anchor To="https://warcraftlogs.com" Target="Target.Blank">warcraftlogs</Anchor>.
 </Lead>
 
+<!--https://getbootstrap.com/docs/5.0/getting-started/introduction/-->
+<!--https://github.com/Blazored/SessionStorage-->
+
 <!--<Page Title="GraphQL Search">-->
 
 <h3>Upload Client Credentials</h3>
@@ -23,6 +26,8 @@
 
 <button class="btn btn-primary" @onclick="SubmitGraphQLQuery">Submit Query</button>
 
+
+
 <h3>Result</h3>
 <div class="result-container">
     <p>@QueryResult</p>
@@ -30,24 +35,82 @@
 
 @code {
 	@using Nickgismokato.Client.Components.ReunionApp;
-    private string GraphQLQuery = string.Empty;
-    private string GraphQLVariables = string.Empty;
+    @using System.Text;
+    private string GraphQLQuery { get; set; } = string.Empty;
+    private string GraphQLVariables { get; set; } = string.Empty;
     private string QueryResult = "No result has been recorded, yet";
+    private string _credentialsFilePath = "data/client_credentials.json";
+    private ReunionLog reunionLog = new ReunionLog();
 
-    private async Task HandleClientCredentialsUpload(InputFileChangeEventArgs e)
-    {
-        var file = e.File;
-        using (var stream = file.OpenReadStream())
-        {
-            var reuniongLog = new ReuniongLog();
-            reuniongLog.SaveClientCredentials(stream);
+    private async Task HandleClientCredentialsUpload(InputFileChangeEventArgs e){
+        var uploadedFile = e.File;
+        if (uploadedFile != null){
+            using (var stream = uploadedFile.OpenReadStream()){
+                try{
+                    await reunionLog.SaveClientCredentials(stream);
+                    System.Console.WriteLine("File uploaded and saved.");
+                }catch (Exception ex){
+                    System.Console.WriteLine($"Error uploading file: {ex.Message}");
+                }
+            }
+        }else{
+            System.Console.WriteLine("No file selected.");
         }
     }
 
-    private async Task SubmitGraphQLQuery()
-    {
-        var reuniongLog = new ReuniongLog();
-        var endpoint = "https://www.warcraftlogs.com/api/v2/client"; // Replace with your actual endpoint
-        QueryResult = await reuniongLog.ExecuteGraphQLQuery(endpoint, GraphQLQuery, GraphQLVariables);
+    private async Task SubmitGraphQLQuery(){
+        try{
+            // Validate inputs
+            if (string.IsNullOrWhiteSpace(GraphQLQuery)){
+                Console.WriteLine("Error: Query is required.");
+                return;
+            }
+
+            // Call the back-end service to execute the query
+            string tokenURL = "https://www.warcraftlogs.com/oauth/token";
+            string credentialsFilePath = "data/client_credentials.json";
+
+            // Read credentials from file
+            if (!File.Exists(credentialsFilePath)){
+                Console.WriteLine("Error: client_credentials.json file not found.");
+                return;
+            }
+
+            var jsonContent = await File.ReadAllTextAsync(credentialsFilePath);
+            System.Console.WriteLine($"Content of jsonContent{jsonContent}");
+            var credentials = Newtonsoft.Json.JsonConvert.DeserializeObject<ClientCredentials>(jsonContent);
+            System.Console.WriteLine($"ID: {credentials.ClientId}\t Secret: {credentials.ClientSecret}");
+            if (credentials == null || string.IsNullOrEmpty(credentials.ClientId) || string.IsNullOrEmpty(credentials.ClientSecret)){
+                Console.WriteLine("Error: Invalid credentials in client_credentials.json.");
+                return;
+            }
+
+            string token = await reunionLog.GetAccessTokenAsync(tokenURL, credentials.ClientId, credentials.ClientSecret);
+
+            if (string.IsNullOrEmpty(token)){
+                Console.WriteLine("Error: Failed to retrieve access token.");
+                return;
+            }
+
+            Console.WriteLine($"Access Token: {token}");
+
+            // Execute the GraphQL query
+            string graphqlEndpoint = "https://www.warcraftlogs.com/api/v2/client";
+            string result = await reunionLog.ExecuteGraphQLQuery(graphqlEndpoint, GraphQLQuery, GraphQLVariables, token);
+            QueryResult = result;
+            Console.WriteLine($"GraphQL Query Result: {result}");
+        }catch (Exception ex){
+            Console.WriteLine($"Error in SubmitGraphQLQuery: {ex.Message}");
+        }
     }
+    // Class to map client credentials
+    public class ClientCredentials{
+        [Newtonsoft.Json.JsonProperty("client_id")]
+        public string ClientId { get; set; } = string.Empty;
+
+        [Newtonsoft.Json.JsonProperty("client_secret")]
+        public string ClientSecret { get; set; } = string.Empty;
+    }
+
+
 }
