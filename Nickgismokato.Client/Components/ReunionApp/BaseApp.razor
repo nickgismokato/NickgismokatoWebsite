@@ -1,3 +1,5 @@
+
+
 <Heading Size="HeadingSize.Is1" Margin="Margin.Is3.FromBottom">ReunionLog Data App</Heading>
 <Lead Margin="Margin.Is4.OnY">
 	This webpage is a service created with the guild <code>New Reunion</code> to get specific data from <Anchor To="https://warcraftlogs.com" Target="Target.Blank">warcraftlogs</Anchor>.
@@ -7,6 +9,10 @@
 <!--https://github.com/Blazored/SessionStorage-->
 
 <!--<Page Title="GraphQL Search">-->
+
+<h3>Test of timer</h3>
+<p>Timer: @test</p>
+<button class="btn btn-primary" @onclick="RunTimer">Start Timer</button>
 
 <h3>Upload Client Credentials</h3>
 <InputFile OnChange="HandleClientCredentialsUpload" />
@@ -35,19 +41,46 @@
 
 @code {
 	@using Nickgismokato.Client.Components.ReunionApp;
+    @using Nickgismokato.Client.Components.ReunionApp.http;
+    
+    
+    @using System;
     @using System.Text;
+    @using System.Threading;
     private string GraphQLQuery { get; set; } = string.Empty;
     private string GraphQLVariables { get; set; } = string.Empty;
     private string QueryResult = "No result has been recorded, yet";
     private string _credentialsFilePath = "data/client_credentials.json";
     private ReunionLog reunionLog = new ReunionLog();
 
+    private int test {get; set;} = 0;
+    private bool timerIsActive = false;
+
+    private async Task RunTimer(){
+        test = 0;
+        sessionStorage.SetItem("testTimer", test);
+        if(!timerIsActive){
+            timerIsActive = true;
+            var periodicTimer = new PeriodicTimer(new TimeSpan(0, 0, 5));
+            while(await periodicTimer.WaitForNextTickAsync() && timerIsActive){
+                test++;
+                sessionStorage.SetItem("testTimer", test);
+                test = sessionStorage.GetItem<int>("testTimer");
+                await InvokeAsync(StateHasChanged);
+            }
+        }else{
+            timerIsActive = false;
+        }
+        
+    }
+
     private async Task HandleClientCredentialsUpload(InputFileChangeEventArgs e){
         var uploadedFile = e.File;
         if (uploadedFile != null){
             using (var stream = uploadedFile.OpenReadStream()){
                 try{
-                    await reunionLog.SaveClientCredentials(stream);
+                    System.Console.WriteLine("Trying to save credentials.");
+                    await CredentialsHandler.SaveClientCredentials(stream);
                     System.Console.WriteLine("File uploaded and saved.");
                 }catch (Exception ex){
                     System.Console.WriteLine($"Error uploading file: {ex.Message}");

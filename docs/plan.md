@@ -1,0 +1,78 @@
+# Development plan
+
+This is where you will find the development plan for this project. There will be some targets that are very descriptive and some which is less. Down below will you find the targets.
+
+## Targets
+- [ ] Website
+  - [ ] Implement User Sessions
+    - [ ] Use https://github.com/Blazored/SessionStorage
+  - [ ] Implement Web Paginator
+    - [ ] Either use custom extension or build the `.css` itself
+    - [ ] Implement this is `ReunionLog` and `WarframeApp`
+  - [ ] Implement `RichText` for global show 
+- [ ] ReunionLog
+  - [ ] Handle `credentials.json` file
+    - [x] Create the file from the `.json` upload in page.
+    - [ ] File restrictive
+    - [ ] `Type` checking
+    - [ ] `Name` checking
+  - [ ] Authenticate with `Oauth` at [WarcraftLogs](https://warcraftlogs.com)
+    - [x] Create `credentials.json` as a temporary file for longer sessions
+    - [x] Error handling
+    - [x] Create token handler
+    - [x] Add class to hold token data.
+  - [ ] Query with GraphQL
+    - [ ] Create `ReunionLog` settings
+    - [ ] Handle custom query
+      - [ ] Custom file `.query`
+      - [x] As pure text
+  - [ ] Show return query string
+    - [ ] default `.json`
+    - [ ] For `ReunionLog` show also `Google Excel` for copy-paste
+    - [ ] Store temporary data for each user in `/data/reunionlog/<user>/`
+  - [ ] Download return query string as `.json`
+    - [ ] Implement button
+    - [ ] Implement copy-to-clipboard button
+  - [ ] Document everything
+- [ ] WarframeApp
+  - [x] Implement a `HTTP` query handler
+    - [x] download as `.json` in `/data/warframe/`
+  - [ ] Implement general objects for each `.json` type for easier handling
+    - [ ] `Arcanes`
+    - [ ] `Conclave`
+    - [ ] `Events`
+    - [ ] `Factions`
+    - [ ] `FissureModifiers`
+    - [ ] `Items`
+    - [ ] `Languages`
+    - [ ] `Locales`
+    - [ ] `MissionTypes`
+    - [ ] `Mods`
+    - [ ] `OperationTypes`
+    - [ ] `PersistentEnemy`
+    - [ ] `SolNodes`
+    - [ ] `Sortie`
+    - [ ] `Syndicates`
+    - [ ] `Tutorials`
+    - [ ] `UpgradeTypes`
+    - [ ] `Warframes`
+    - [ ] `Weapons`
+  - [ ] Create a list form to view the data of the objects
+    - [ ] Implement a handler to handle `EventCalls` for screen
+    - [ ] Implement a custom sorter for each type
+  - [ ] Create an automatic updater which update every `.json`
+    - [ ] Implement a handler in case a `.json` file could not be requested
+    - [ ] Implement a reporter for the last time the documents have been updated.
+  - [ ] (*Optional*) Implement a version controller for `Warframe` updates
+  - [ ] Document everything
+- [ ] SaTyR Documentation
+  - [ ] Implement a way for admin to store data on-the-go without needing a recompile
+    - [ ] Implement a version control for this
+    - [ ] Implement a handler incase there where problems with the upload
+  - [ ] Implement a list for all stored documents
+    - [ ] Implement a handler for all stored documents
+    - [ ] (*Optional*) Implement Tags for the documents
+  - [ ] Implement a `.pdf` preview of the document
+    - [ ] Implement this as an "*in-page*" handler
+  - [ ] Implement `html` files as a alternative to `.pdf` files
+    - [ ] **Important** These will not be automated

@@ -5,6 +5,7 @@ using Blazorise.Icons.FontAwesome;
 
 
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using Blazored.SessionStorage;
 
 var builder = WebAssemblyHostBuilder.CreateDefault( args );
 
@@ -19,6 +20,7 @@ if(Directory.Exists(pathLog)){
     }
 }
 
+
 await builder.Build().RunAsync();
 //private static Logger logger = LogManager.GetCurrentClassLogger();
 
@@ -26,6 +28,7 @@ void AddBlazorise( IServiceCollection services ){
     services
         .AddBlazorise();
     services
+        .AddBlazoredLocalStorage()
         .AddBootstrap5Providers()
         .AddFontAwesomeIcons();
 }

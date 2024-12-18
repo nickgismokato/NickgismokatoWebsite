@@ -21,30 +21,6 @@ namespace Nickgismokato.Client.Components.ReunionApp{
             }
         }
 
-
-        // Method to handle uploading the JSON file
-        public async Task SaveClientCredentials(Stream fileStream){
-            try{
-                File.WriteAllText("data/client_credentials.json", "test content");
-            }catch(Exception ex){
-                System.Console.WriteLine($"Error writing all files: {ex.Message}");
-            }
-            try{
-                if (fileStream == null || fileStream.Length == 0){
-                    throw new ArgumentException("The provided file stream is empty or null.");
-                }
-                
-                using (var file = new FileStream(_credentialsFilePath, FileMode.Create, FileAccess.Write, FileShare.None, 4096, true)){
-                    System.Console.WriteLine("Starting file write...");
-                    await fileStream.CopyToAsync(file);
-                    System.Console.WriteLine("File write completed.");
-                }
-            }catch (Exception ex){
-                System.Console.WriteLine($"Error in SaveClientCredentialsAsync: {ex.Message}");
-            }
-        }
-
-
         // Method to process a GraphQL query
         public async Task<string> ExecuteGraphQLQuery(string endpoint, string query, string variables = null, string accessToken = null){
             GraphQLHttpRequest graphQLRequest = null;
