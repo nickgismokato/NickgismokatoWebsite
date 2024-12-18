@@ -58,14 +58,14 @@
 
     private async Task RunTimer(){
         test = 0;
-        sessionStorage.SetItem("testTimer", test);
+        //sessionStorage.SetItem("testTimer", test);
         if(!timerIsActive){
             timerIsActive = true;
             var periodicTimer = new PeriodicTimer(new TimeSpan(0, 0, 5));
             while(await periodicTimer.WaitForNextTickAsync() && timerIsActive){
                 test++;
-                sessionStorage.SetItem("testTimer", test);
-                test = sessionStorage.GetItem<int>("testTimer");
+                //sessionStorage.SetItem("testTimer", test);
+                //test = sessionStorage.GetItem<int>("testTimer");
                 await InvokeAsync(StateHasChanged);
             }
         }else{

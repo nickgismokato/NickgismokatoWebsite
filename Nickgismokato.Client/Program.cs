@@ -6,6 +6,7 @@ using Blazorise.Icons.FontAwesome;
 
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Blazored.SessionStorage;
+using Blazored.LocalStorage;
 
 var builder = WebAssemblyHostBuilder.CreateDefault( args );
 

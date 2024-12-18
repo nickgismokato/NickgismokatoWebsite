@@ -13,6 +13,7 @@
 @code{
 	@using Nickgismokato.Client.Components.WarframeApp.Enums;
 	@using Nickgismokato.Client.Components.WarframeApp.Logging;
+    @using Nickgismokato.Client.utils.OSUtils;
 
 	private bool _isRunning = true;
 	
@@ -46,6 +47,9 @@
 
     private async Task ManualUpdate(){
         GlobalLogger.LogInfo("Manual Update of Warframe data has been initialised");
+        if(!OSUtils.CheckIfDirectoryExists("data/warframe/")){
+            OSUtils.CreateDirectory("data/warframe/");
+        }
         System.IO.DirectoryInfo di = new DirectoryInfo("data/warframe/");
         GlobalLogger.LogInfo("Deleting old .json Files in data/warframe/*");
         foreach(FileInfo file in di.EnumerateFiles()){
