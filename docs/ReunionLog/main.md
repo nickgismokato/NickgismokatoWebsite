@@ -4,7 +4,7 @@
 
 # OAuth2
 
-`OAuth2` is the authentication service which WarcraftLogs is utilizing. A client has to be made at [WarcraftLogs API](https://www.warcraftlogs.com/api/docsm). The link is a link to the documentation on how to do it.
+
 
 Then when you want to send data to or receive data from WarcraftLogs, a service will have to do the following:
 
