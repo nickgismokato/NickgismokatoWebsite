@@ -2,25 +2,21 @@
 
 namespace Nickgismokato.Client.Components.TodoApp;
 
-public abstract class BaseTodoItems : ComponentBase
-{
+public abstract class BaseTodoItems : ComponentBase{
     protected Validations? validations;
 
     protected string? description;
 
     protected Filter filter = Filter.All;
 
-    protected List<Todo> todos = new()
-        {
+    protected List<Todo> todos = new(){
             new() { Description = "Buy milk" },
             new() { Description = "Call John regarding the meeting" },
             new() { Description = "Walk a dog" },
         };
 
-    protected IEnumerable<Todo> Todos
-    {
-        get
-        {
+    protected IEnumerable<Todo> Todos{
+        get{
             var query = from t in todos select t;
 
             if ( filter == Filter.Active )
@@ -33,20 +29,16 @@ public abstract class BaseTodoItems : ComponentBase
         }
     }
 
-    protected void SetFilter( Filter filter )
-    {
+    protected void SetFilter( Filter filter ){
         this.filter = filter;
     }
 
-    protected void OnCheckAll( bool isChecked )
-    {
+    protected void OnCheckAll( bool isChecked ){
         todos.ForEach( x => x.Completed = isChecked );
     }
 
-    protected async Task OnAddTodo()
-    {
-        if ( await validations!.ValidateAll() )
-        {
+    protected async Task OnAddTodo(){
+        if ( await validations!.ValidateAll() ){
             todos.Add( new() { Description = description } );
             description = null;
 
@@ -54,14 +46,12 @@ public abstract class BaseTodoItems : ComponentBase
         }
     }
 
-    protected void OnClearCompleted()
-    {
+    protected void OnClearCompleted(){
         todos.RemoveAll( x => x.Completed );
         filter = Filter.All;
     }
 
-    protected Task OnTodoStatusChanged( bool isChecked )
-    {
+    protected Task OnTodoStatusChanged( bool isChecked ){
         return InvokeAsync( StateHasChanged );
     }
 }

@@ -8,7 +8,7 @@
 
 ## What a client is needed to do
 
-A client that want to utilize either Warcraftlogs own API or the ReunionLog service, will need to create a client at [WarcraftLogs Client](https://www.warcraftlogs.com/api/clients/). This requires to a user at their website. From here you will have to do the following:
+A client that want to utilize either WarcraftLogs own API or the ReunionLog service, will need to create a client at [WarcraftLogs Client](https://www.warcraftlogs.com/api/clients/). This requires to a user at their website. From here you will have to do the following:
 
 1. Follow the link above (*WarcraftLogs Client*).
 2. Enter a client name. The client name is used to identify the client in the list view. Client names will be visible to your site users when authorizing them.

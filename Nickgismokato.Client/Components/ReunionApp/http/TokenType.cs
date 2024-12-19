@@ -1,8 +1,7 @@
 
 
 namespace Nickgismokato.Client.Components.ReunionApp.http{
-	public enum TokenType{
-		
+	public enum TokenType{	
 		access,
 		ID,
 		self_signed,

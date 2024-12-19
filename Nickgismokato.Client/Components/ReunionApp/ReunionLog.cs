@@ -55,8 +55,7 @@ namespace Nickgismokato.Client.Components.ReunionApp{
                     
                     var response = await client.SendQueryAsync<dynamic>(graphQLRequest);
                     if (response.Errors != null){
-                        foreach (var error in response.Errors)
-                        {
+                        foreach (var error in response.Errors){
                             System.Console.WriteLine($"GraphQL Error: {error.Message}");
                         }
                     }

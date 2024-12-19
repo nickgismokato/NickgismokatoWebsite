@@ -5,30 +5,26 @@ using Microsoft.AspNetCore.Components;
 
 namespace Nickgismokato.Client.Layouts;
 
-public partial class MainLayout
-{
+public partial class MainLayout{
     [Inject] protected ITextLocalizerService? LocalizationService { get; set; }
 
     [CascadingParameter] protected Theme? Theme { get; set; }
 
     protected string layoutType = "fixed-header";
 
-    protected override async Task OnInitializedAsync()
-    {
+    protected override async Task OnInitializedAsync(){
         await SelectCulture( "en-US" );
 
         await base.OnInitializedAsync();
     }
 
-    private Task SelectCulture( string name )
-    {
+    private Task SelectCulture( string name ){
         LocalizationService!.ChangeLanguage( name );
 
         return Task.CompletedTask;
     }
 
-    Task OnThemeEnabledChanged( bool value )
-    {
+    Task OnThemeEnabledChanged( bool value ){
         if ( Theme is null )
             return Task.CompletedTask;
 
@@ -37,8 +33,7 @@ public partial class MainLayout
         return InvokeAsync( Theme.ThemeHasChanged );
     }
 
-    Task OnThemeGradientChanged( bool value )
-    {
+    Task OnThemeGradientChanged( bool value ){
         if ( Theme is null )
             return Task.CompletedTask;
 
@@ -47,8 +42,7 @@ public partial class MainLayout
         return InvokeAsync( Theme.ThemeHasChanged );
     }
 
-    Task OnThemeRoundedChanged( bool value )
-    {
+    Task OnThemeRoundedChanged( bool value ){
         if ( Theme is null )
             return Task.CompletedTask;
 
@@ -57,8 +51,7 @@ public partial class MainLayout
         return InvokeAsync( Theme.ThemeHasChanged );
     }
 
-    Task OnThemeColorChanged( string value )
-    {
+    Task OnThemeColorChanged( string value ){
         if ( Theme is null )
             return Task.CompletedTask;
 
@@ -83,6 +76,4 @@ public partial class MainLayout
 
         return InvokeAsync( Theme.ThemeHasChanged );
     }
-
-
 }
