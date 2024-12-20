@@ -1,5 +1,5 @@
-@using Blazored.LocalStorage
-@inject ILocalStorageService localStorage
+@inject Blazored.LocalStorage.ISyncLocalStorageService localStorage
+
 
 <Heading Size="HeadingSize.Is1" Margin="Margin.Is3.FromBottom">ReunionLog Data App</Heading>
 <Lead Margin="Margin.Is4.OnY">
@@ -44,6 +44,7 @@
 	@using Nickgismokato.Client.Components.ReunionApp;
     @using Nickgismokato.Client.Components.ReunionApp.http;
     
+    @using Blazored.LocalStorage
     @using System;
     @using System.Text;
     @using System.Threading;
@@ -54,22 +55,28 @@
     private string QueryResult = "No result has been recorded, yet";
     private string _credentialsFilePath = "data/client_credentials.json";
     private ReunionLog reunionLog = new ReunionLog();
-
+    //private Blazored.LocalStorage.ISyncLocalStorageService localStorage = new ISyncLocalStorageService();
     private int test {get; set;} = 0;
     private bool timerIsActive = false;
 	#endregion
 
+    protected override async Task OnInitializedAsync(){
+        if(!(localStorage.GetItem<int>("testTimer") == 0)){
+            test = localStorage.GetItem<int>("testTimer");
+        }
+    }
+
 	#region Methods
     private async Task RunTimer(){
         test = 0;
-       localStorage.SetItemAsync("testTimer", test);
+        localStorage.SetItem("testTimer", test);
         if(!timerIsActive){
             timerIsActive = true;
-            var periodicTimer = new PeriodicTimer(new TimeSpan(0, 0, 5));
+            var periodicTimer = new PeriodicTimer(new TimeSpan(0, 0, 1));
             while(await periodicTimer.WaitForNextTickAsync() && timerIsActive){
                 test++;
-                localStorage.SetItemAsync("testTimer", test);
-                test = await localStorage.GetItemAsync<int>("testTimer");
+                localStorage.SetItem("testTimer", test);
+                test = localStorage.GetItem<int>("testTimer");
                 await InvokeAsync(StateHasChanged);
             }
         }else{

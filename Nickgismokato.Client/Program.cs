@@ -4,7 +4,6 @@ using Blazorise.Bootstrap5;
 using Blazorise.Icons.FontAwesome;
 
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-using Blazored.SessionStorage;
 using Blazored.LocalStorage;
 
 var builder = WebAssemblyHostBuilder.CreateDefault( args );
@@ -22,19 +21,19 @@ if(Directory.Exists(pathLog)){
     }
 }
 
-builder.Services.AddBlazoredLocalStorage(config =>
-{
+// Correctly register Blazored.LocalStorage
+builder.Services.AddBlazoredLocalStorage(config =>{
     config.JsonSerializerOptions.WriteIndented = true;
 });
 
-builder.Services.AddScoped<ILocalStorageService, LocalStorageService>();
+
 await builder.Build().RunAsync();
 //private static Logger logger = LogManager.GetCurrentClassLogger();
 
 void AddBlazorise( IServiceCollection services ){
     services
-        .AddBlazorise();
-    services
+        //.AddBlazorise(options => options.Immediate = true)
+        .AddBlazorise()
         .AddBootstrap5Providers()
         .AddFontAwesomeIcons();
 }
