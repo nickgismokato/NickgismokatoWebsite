@@ -3,7 +3,6 @@ using NLog.Extensions.Logging;
 using Blazorise.Bootstrap5;
 using Blazorise.Icons.FontAwesome;
 
-
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Blazored.SessionStorage;
 using Blazored.LocalStorage;

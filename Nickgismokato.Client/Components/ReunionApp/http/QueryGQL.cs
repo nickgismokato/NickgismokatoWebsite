@@ -4,7 +4,7 @@ using GraphQL.Client.Serializer.Newtonsoft;
 
 namespace Nickgismokato.Client.Components.ReunionApp.http{
 	public static class QueryGQL {
-		private static string graphqlEndpoint = "https://www.warcraftlogs.com/api/v2/client"
+		private static string graphqlEndpoint = "https://www.warcraftlogs.com/api/v2/client";
 		private static string _credentialsFilePath = "data/client_credentials.json";
 		
 		public static async Task<string> SendQueryGQL(string query, string variables){
