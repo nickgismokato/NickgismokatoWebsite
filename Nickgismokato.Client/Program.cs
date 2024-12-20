@@ -9,6 +9,8 @@ using Blazored.LocalStorage;
 
 var builder = WebAssemblyHostBuilder.CreateDefault( args );
 
+
+
 AddBlazorise( builder.Services );
 
 LogManager.Setup().LoadConfigurationFromFile("nlog.config");
@@ -20,6 +22,10 @@ if(Directory.Exists(pathLog)){
     }
 }
 
+builder.Services.AddBlazoredLocalStorage(config =>
+{
+    config.JsonSerializerOptions.WriteIndented = true;
+});
 
 await builder.Build().RunAsync();
 //private static Logger logger = LogManager.GetCurrentClassLogger();
@@ -28,7 +34,6 @@ void AddBlazorise( IServiceCollection services ){
     services
         .AddBlazorise();
     services
-        .AddBlazoredLocalStorage()
         .AddBootstrap5Providers()
         .AddFontAwesomeIcons();
 }

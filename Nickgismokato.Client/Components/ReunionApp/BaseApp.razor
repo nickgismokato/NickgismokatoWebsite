@@ -1,4 +1,5 @@
-<!--inject Blazored.SessionStorage.ISyncSessionStorageService sessionStorage-->
+@using Blazored.LocalStorage
+@inject ILocalStorageService localStorage
 
 <Heading Size="HeadingSize.Is1" Margin="Margin.Is3.FromBottom">ReunionLog Data App</Heading>
 <Lead Margin="Margin.Is4.OnY">
@@ -7,7 +8,7 @@
 
 <!--https://getbootstrap.com/docs/5.0/getting-started/introduction/-->
 <!--https://github.com/Blazored/SessionStorage-->
-
+<!--https://github.com/IEvangelist/blazorators/issues/59-->
 <!--<Page Title="GraphQL Search">-->
 
 <h3>Test of timer</h3>
@@ -61,14 +62,14 @@
 	#region Methods
     private async Task RunTimer(){
         test = 0;
-        //sessionStorage.SetItem("testTimer", test);
+       localStorage.SetItemAsync("testTimer", test);
         if(!timerIsActive){
             timerIsActive = true;
             var periodicTimer = new PeriodicTimer(new TimeSpan(0, 0, 5));
             while(await periodicTimer.WaitForNextTickAsync() && timerIsActive){
                 test++;
-                //sessionStorage.SetItem("testTimer", test);
-                //test = sessionStorage.GetItem<int>("testTimer");
+                localStorage.SetItemAsync("testTimer", test);
+                test = await localStorage.GetItemAsync<int>("testTimer");
                 await InvokeAsync(StateHasChanged);
             }
         }else{
