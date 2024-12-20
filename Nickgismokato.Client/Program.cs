@@ -27,6 +27,7 @@ builder.Services.AddBlazoredLocalStorage(config =>
     config.JsonSerializerOptions.WriteIndented = true;
 });
 
+builder.Services.AddScoped<ILocalStorageService, LocalStorageService>();
 await builder.Build().RunAsync();
 //private static Logger logger = LogManager.GetCurrentClassLogger();
 
