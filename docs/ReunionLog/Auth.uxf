@@ -1,0 +1,31 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLSequenceAllInOne</id><coordinates><x>10</x><y>0</y><w>950</w><h>1030</h></coordinates><panel_attributes>title=ReunionLog:\nSequence of query
+obj=USER~a ACTOR EXECUTION
+obj=ReunionLog~b ACTIVE
+obj=WarcraftLog~w ACTIVE
+
+//Uploading Credentials
+a-&gt;&gt;&gt;b :&lt;Async&gt;\n Upload Data.json\n; on=b;off=a
+a:No user input;b-&gt;b + :&lt;await&gt;\n Create credentials.json; 
+off=b ;
+
+
+a-&gt;&gt;&gt;b :&lt;Async&gt;\n Send Query; on=b;on=a
+b-&gt;b +++ :&lt;await&gt;\n Create Token;
+b-&gt;w :&lt;Async&gt;\n Request token;on=b;on=w
+w.&gt;b : &lt;Return&gt;\n Token;off=w
+off=b
+
+
+b-&gt;b+ :&lt;await&gt;\n Check Query;
+b:\n;
+b-&gt;b+ :&lt;await&gt;\n Check Variables;
+b:\n;
+b-&gt;w :&lt;async&gt;\n Send Query;on=w;
+w:\n;
+w:\n;
+w.&gt;b  :&lt;return&gt;\nGraphQL Query;off=w
+b.&gt;a :&lt;Return&gt;\n Query Data;off=b;off=a
+
+
+
+</panel_attributes><additional_attributes></additional_attributes></element></diagram>
