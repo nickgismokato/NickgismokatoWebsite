@@ -72,6 +72,5 @@ namespace Nickgismokato.Client.Components.ReunionApp{
                 return "Error";
             }
         }
-
     }
 }

@@ -24,6 +24,7 @@
 		</PackageReference>
 		<PackageReference Include="Blazorise.Markdown" Version="1.6" />
 		<PackageReference Include="GraphQL" Version="8.2.1" />
+		<PackageReference Include="GraphQL.MicrosoftDI" Version="8.2.1" />
 		<PackageReference Include="GraphQL.Client" Version="6.1.0" />
 		<PackageReference Include="GraphQL.Client.Abstractions" Version="6.1.0" />
 		<PackageReference Include="GraphQL.Client.Abstractions.Websocket" Version="6.1.0" />

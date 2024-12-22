@@ -1,11 +1,3 @@
-h1, h2, h3, h4, h5, h6 {
-	/*background: #FFFFFF;*/
-	border-top: 1px;
-	border-bottom: 3px solid black;
-	font-weight: normal;
-	padding-left: 2px;
-	padding-right: 2px;
-}
 blockquote {
 	background: lightgray;
 	border-left: 3px solid grey;
@@ -47,7 +39,6 @@ ol {
 	margin-right-rtl: 25px;
 }
 
-
 .submit-button {
     font-size: 18px;
     padding: 10px 20px;
@@ -61,10 +52,6 @@ ol {
 
 .submit-button:hover {
     background-color: #0056b3;
-}
-
-h3 {
-    margin-top: 30px;
 }
 
 p {
