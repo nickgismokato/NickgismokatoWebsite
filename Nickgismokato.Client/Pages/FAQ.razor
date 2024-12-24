@@ -5,31 +5,41 @@
     <AccordionItem @bind-Visible="@accordionItem1Visible">
         <AccordionHeader>
             <Heading Size="HeadingSize.Is5">
-                <AccordionToggle>What is Blazorise?</AccordionToggle>
+                <AccordionToggle>Why does this website has a licencse?</AccordionToggle>
             </Heading>
         </AccordionHeader>
         <AccordionBody>
-            Blazorise is a component library built on top of Blazor, which is a framework from Microsoft for building interactive client-side web UIs using .NET. Blazorise provides a rich set of components that are easy to use and customizable, helping developers to build responsive and modern web applications more efficiently.
+            This website is an open source project to do the following:
+			<Alert Color="Color.Info" Visible>
+				<UnorderedList>
+					<UnorderedListItem>Act as a personnal webpage for the developer</UnorderedListItem>
+					<UnorderedListItem>Act as a inspiration for future <code>.NET8.0 WASM Blazor</code> developers</UnorderedListItem>
+					<UnorderedListItem>Act as a public service for certain webapplications.</UnorderedListItem>
+				</UnorderedList>
+			</Alert>
+			So in short, since this webpage is public on a <code>Github</code> repository, I do in fact need a licence.
         </AccordionBody>
     </AccordionItem>
     <AccordionItem @bind-Visible="@accordionItem2Visible">
         <AccordionHeader>
             <Heading Size="HeadingSize.Is5">
-                <AccordionToggle>What CSS  frameworks does Blazorise support?</AccordionToggle>
+                <AccordionToggle>What custom software has been used on this webpage?</AccordionToggle>
             </Heading>
         </AccordionHeader>
         <AccordionBody>
-            Blazorise supports several CSS frameworks, including Bootstrap (known for responsive design elements), Bulma (valued for simplicity and Flexbox base), Material (inspired by Google's Material Design), Ant Design (geared towards enterprise-level products and adapting React components' design principles), and Tailwind CSS (famous for its utility-first approach and versatility). These frameworks provide distinct styles and philosophies, offering developers a range of options to best suit their project's requirements.
+            No custom software has been used on this webpage. Going to the <code>github</code> repository and looking at the two <code>.csproj</code> files and the <code>.sln</code> solution file, one will find everything is running nativly with <code>.NET8.0</code> and <code>Blazor</code> using <code>Blazorise</code>.
+
+			The only custom in this webpage is certain arts, created by the developer <b>Nickgismokato</b> and the coding itself.
         </AccordionBody>
     </AccordionItem>
     <AccordionItem @bind-Visible="@accordionItem3Visible">
         <AccordionHeader>
             <Heading Size="HeadingSize.Is5">
-                <AccordionToggle>What are the benefits of Blazorise commercial license?</AccordionToggle>
+                <AccordionToggle>Can the server side of this webpage run on <code>Windows</code> or is it exclusively a <code>GNU+Linux</code> server.</AccordionToggle>
             </Heading>
         </AccordionHeader>
         <AccordionBody>
-            A Blazorise commercial license typically includes access to advanced components, priority support, options for dedicated consultations, frequent updates and bug fixes, a license for unrestricted commercial use, potential access to the source code, and opportunities for training and workshops. This package enhances functionality, offers better support, and provides operational security for commercial projects.
+            This webpage, both the client and the server, was made using pure <code>.NET CLI</code> commands. No <code>Visual Studio</code> was using in the development. Furthermore only <code>VSCode</code> and <code>Vim</code> was used for development. So you can develop this website on any platform of your liking. Wether or not it will run on those platforms has not been tested. <code>Debian 12</code> and <code>WSL Ubuntu 24.04</code> has been used in the development. I have found problems running the webpage on the <code>WSL</code> Windows subsystem.
         </AccordionBody>
     </AccordionItem>
 </Accordion>
@@ -37,7 +47,7 @@
 <Child />
 
 @code {
-    bool accordionItem1Visible = true;
+    bool accordionItem1Visible = false;
     bool accordionItem2Visible = false;
     bool accordionItem3Visible = false;
 }
