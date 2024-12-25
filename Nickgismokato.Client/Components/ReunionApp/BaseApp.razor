@@ -1,4 +1,8 @@
-@inject Blazored.LocalStorage.ISyncLocalStorageService localStorage
+
+@using Microsoft.AspNetCore.Components
+@using Microsoft.JSInterop
+@inject IJSRuntime JS
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
 
 
 <Heading Size="HeadingSize.Is1" Margin="Margin.Is3.FromBottom">ReunionLog Data App</Heading>
@@ -12,7 +16,11 @@
 <!--<Page Title="GraphQL Search">-->
 
 <h3>Test of timer</h3>
-<p>Timer: @test</p>
+@if(hasRendered){
+    <p>Timer: @test</p>
+}else{
+    <p>Timer: <b>Loading!</b></p>
+}
 <button class="btn btn-primary" @onclick="RunTimer">Start Timer</button>
 
 <h3>Upload Client Credentials</h3>
@@ -44,7 +52,7 @@
 	@using Nickgismokato.Client.Components.ReunionApp;
     @using Nickgismokato.Client.Components.ReunionApp.http;
     
-    @using Blazored.LocalStorage
+    @using Blazored.LocalStorage;
     @using System;
     @using System.Text;
     @using System.Threading;
@@ -58,25 +66,46 @@
     //private Blazored.LocalStorage.ISyncLocalStorageService localStorage = new ISyncLocalStorageService();
     private int test {get; set;} = 0;
     private bool timerIsActive = false;
+    private bool hasRendered = false;
 	#endregion
 
-    protected override async Task OnInitializedAsync(){
-        if(!(localStorage.GetItem<int>("testTimer") == 0)){
-            test = localStorage.GetItem<int>("testTimer");
+
+    protected override async Task OnAfterRenderAsync(bool firstRender){
+        int tempTest = 0;
+        tempTest = await localStorage.GetItemAsync<int>("testTimer");
+        if(firstRender){
+            if(!(tempTest == 0)){
+                test = tempTest;
+            }else{
+                test = 0;
+
+            }
+            //test = await localStorage.GetItemAsync<int>("testTimer");
+        }else{
+            if(!(tempTest == 0)){
+                test = tempTest;
+            }else{
+                test = 0;
+            }
         }
+        hasRendered = true;
+    }
+    protected override async Task OnInitializedAsync(){
+        timerIsActive = false;
+        hasRendered = false;
     }
 
 	#region Methods
     private async Task RunTimer(){
         test = 0;
-        localStorage.SetItem("testTimer", test);
+        await localStorage.SetItemAsync("testTimer", test);
         if(!timerIsActive){
             timerIsActive = true;
             var periodicTimer = new PeriodicTimer(new TimeSpan(0, 0, 1));
             while(await periodicTimer.WaitForNextTickAsync() && timerIsActive){
                 test++;
-                localStorage.SetItem("testTimer", test);
-                test = localStorage.GetItem<int>("testTimer");
+                await localStorage.SetItemAsync("testTimer", test);
+                test = await localStorage.GetItemAsync<int>("testTimer");
                 await InvokeAsync(StateHasChanged);
             }
         }else{

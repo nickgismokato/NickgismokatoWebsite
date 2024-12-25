@@ -2,6 +2,7 @@ using Blazorise;
 using Nickgismokato.Components;
 using Blazorise.Bootstrap5;
 using Blazorise.Icons.FontAwesome;
+using Blazored.LocalStorage;
 
 var builder = WebApplication.CreateBuilder( args );
 
@@ -11,6 +12,10 @@ builder.Services.AddRazorComponents()
     .AddInteractiveWebAssemblyComponents();
 
 AddBlazorise( builder.Services );
+
+builder.Services.AddBlazoredLocalStorage(config =>{
+    config.JsonSerializerOptions.WriteIndented = true;
+});
 
 var app = builder.Build();
 
@@ -37,8 +42,7 @@ app.MapRazorComponents<App>()
 
 app.Run();
 
-void AddBlazorise( IServiceCollection services )
-{
+void AddBlazorise( IServiceCollection services ){
     services
         .AddBlazorise();
     services
