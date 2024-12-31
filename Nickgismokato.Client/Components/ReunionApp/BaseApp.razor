@@ -1,6 +1,7 @@
 
 @using Microsoft.AspNetCore.Components
 @using Microsoft.JSInterop
+@implements IDisposable
 @inject IJSRuntime JS
 @inject Blazored.LocalStorage.ILocalStorageService localStorage
 
@@ -64,38 +65,56 @@
     private string _credentialsFilePath = "data/client_credentials.json";
     private ReunionLog reunionLog = new ReunionLog();
     //private Blazored.LocalStorage.ISyncLocalStorageService localStorage = new ISyncLocalStorageService();
-    private int test {get; set;} = 0;
+
+    [Parameter]
+    public int test {get; set;} = 0;
+    private int testCountRender {get; set;} = 0;
+    private int testCountInit {get; set;} = 0;
     private bool timerIsActive = false;
-    private bool hasRendered = false;
+
+    public bool hasRendered {get;set;} = false;
 	#endregion
 
+    #region IDispoasble
+    public void Dispose(){
+        timerIsActive = false;
+    }
+    #endregion
 
-    protected override async Task OnAfterRenderAsync(bool firstRender){
-        int tempTest = 0;
-        tempTest = await localStorage.GetItemAsync<int>("testTimer");
-        if(firstRender){
-            if(!(tempTest == 0)){
-                test = tempTest;
-            }else{
-                test = 0;
-
-            }
-            //test = await localStorage.GetItemAsync<int>("testTimer");
-        }else{
-            if(!(tempTest == 0)){
-                test = tempTest;
-            }else{
-                test = 0;
+    #region DefaultMethods
+    public override async Task SetParametersAsync(ParameterView parameters){
+        hasRendered = false;
+        if(parameters.TryGetValue<int>(nameof(test), out int value)){
+            if(value == 0){
+                test = await localStorage.GetItemAsync<int>("testTimer");
             }
         }
-        hasRendered = true;
-    }
-    protected override async Task OnInitializedAsync(){
-        timerIsActive = false;
-        hasRendered = false;
+        await base.SetParametersAsync(parameters);
     }
 
-	#region Methods
+    protected override async Task OnInitializedAsync(){
+        await base.OnInitializedAsync();
+    }
+
+    protected override void OnParametersSet(){
+        hasRendered = true;
+        timerIsActive = false;
+
+    }
+    protected override async Task OnParametersSetAsync(){
+        
+    } 
+
+    protected override async Task OnAfterRenderAsync(bool firstRender){
+        if(firstRender){
+            test = await localStorage.GetItemAsync<int>("testTimer");
+            StateHasChanged();
+        }
+        
+    }
+    #endregion
+    #region Methods
+
     private async Task RunTimer(){
         test = 0;
         await localStorage.SetItemAsync("testTimer", test);
